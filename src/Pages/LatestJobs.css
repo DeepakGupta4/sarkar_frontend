@@ -1,0 +1,130 @@
+/* Job Section Container */
+.job-container {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #000;
+}
+
+/* Intro Section */
+.job-intro {
+  max-width: 1300px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background: rgb(38, 33, 33);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-intro h1 {
+  font-size: 28px;
+  color: #ffaa00;
+  margin-bottom: 10px;
+}
+
+.job-intro p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Job List */
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Job Card */
+.job-card {
+  background: rgb(38, 33, 33);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+/* Job Title */
+.job-title {
+  font-size: 22px;
+  color: #4a90e2; /* Cool Sky Blue */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Job Department */
+.job-department {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6c5ce7; /* Soft Purple */
+}
+
+/* Job Deadline */
+.job-deadline {
+  font-size: 14px;
+  color: #ff4757; /* Light Coral Red */
+  font-weight: bold;
+}
+
+/* Job Description */
+.job-description {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #fff; /* Dark Gray for readability */
+}
+
+/* Job Documents */
+.job-documents h3 {
+  font-size: 16px;
+  color: #00cec9; /* Soft Teal */
+  margin-bottom: 5px;
+}
+
+.job-documents ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-documents li {
+  font-size: 14px;
+  color: #74b9ff; /* Light Sky Blue */
+  margin-bottom: 5px;
+}
+
+/* Card Styling */
+.job-card {
+  background: linear-gradient(135deg, #1e272e, #485460); /* Gradient Dark Gray */
+  color: #ffffff; /* White Text */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Apply Button */
+.apply-button {
+  background: #ffcc00;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.apply-button:hover {
+  background: #ffaa00;
+}

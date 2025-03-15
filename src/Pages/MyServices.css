@@ -1,0 +1,68 @@
+/* MyServices.css */
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .services-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .services-description {
+    font-size: 25px;
+    color: #ffcc00;
+    margin-bottom: 30px;
+  }
+  
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-link {
+    text-decoration: none;
+  }
+  
+  .service-card {
+    background: #5c5858;
+    border-radius: 17px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 230px;
+  }
+  
+  .service-card:hover {
+    background: #ffcc00;
+    /* color: #fff; */
+    transform: translateY(-5px);
+  }
+  
+  .service-icon {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .service-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+  }
+  /* .service.service-card{
+    color: #000;
+  }
+   */
+  .service-description {
+    font-size: 19px;
+    color: #fff;
+  }
+  

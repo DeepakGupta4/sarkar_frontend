@@ -1,0 +1,145 @@
+/* General Styles */
+.connect-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  /* Header Section */
+  .connect-header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .connect-header h1 span {
+    color: #ffcc00;
+  }
+  
+  .connect-header p {
+    font-size: 25px;
+    color: #777;
+    margin-bottom: 30px;
+  }
+  
+  /* Contact Info Section */
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .contact-card {
+    background: #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .contact-card h3 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+  .contact-card p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Map Section */
+  .map-container {
+    margin-top: 40px;
+  }
+  
+  .map-container h2 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    margin-top: 40px;
+    padding: 20px;
+    background: #7e7979;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form h2 {
+    font-size: 35px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-card {
+      width: 80%;
+    }
+  
+    .map-container iframe {
+      height: 250px;
+    }
+  }
+  

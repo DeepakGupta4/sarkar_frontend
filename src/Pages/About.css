@@ -1,0 +1,155 @@
+/* General Container */
+.about-container {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    padding: 50px 20px;
+    background-color: black;
+   
+  }
+  
+  /* Header Section */
+  .about-header {
+    /* background: linear-gradient(to right, #003366, #0059b3); */
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+  
+  .about-header h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .about-header h1 span {
+    color: #ffcc00;
+  }
+  
+  .about-header p {
+    font-size: 25px;
+    font-weight: 300;
+  }
+  
+  /* About Content Section */
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+    border-right: 1px solid #fff;
+  }
+
+  /* .about-image{
+    border-right: 1px solid #fff;
+  } */
+  
+  /* Image Styling */
+  .about-image img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   
+  }
+  
+  /* Text Styling */
+  .about-text {
+    max-width: 700px;
+    margin: 20px;
+    text-align: left;
+  }
+  
+  .about-text h2 {
+    color: #ffaa00;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .about-text ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-text li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-text li::before {
+    content: "✔";
+    color: #ffcc00;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  /* Mission Section */
+  .about-mission {
+    border: 1px solid #fff;
+    background: #000;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+  }
+  
+  .about-mission h2 {
+    color: #ffaa00;
+    font-size: 28px;
+  }
+  
+  .about-mission p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* CTA Section */
+  .about-cta {
+    margin-top: 50px;
+    padding: 30px;
+    /* background: #1a548d; */
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #ffaa00;
+    border-radius: 10px;
+  }
+  
+  .about-cta h2 {
+    font-size: 28px;
+    color: #ffaa00;
+  }
+  
+  .about-cta p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .about-button {
+    background: #ffcc00;
+    color: #003366;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .about-button:hover {
+    background: #ffaa00;
+  }
+  

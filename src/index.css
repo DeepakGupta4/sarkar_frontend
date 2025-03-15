@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+  width: 100%;
+}
+*::selection {
+  background-color: #000;
+  color: #fff;
+  background: #95c11e;
+}
+
+body::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  background: #95c11e;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 50px;
+}
+body {
+  overflow-x: hidden;
+}

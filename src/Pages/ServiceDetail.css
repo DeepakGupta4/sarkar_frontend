@@ -1,0 +1,51 @@
+/* ServiceDetail.css */
+
+.service-detail-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .service-detail-container h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .service-detail-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .service-detail-container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .service-detail-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .service-detail-container ul li {
+    font-size: 16px;
+    color: #444;
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .service-detail-container strong {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
