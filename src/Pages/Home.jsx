@@ -10,8 +10,6 @@ const Home = () => {
     <div>
         <Navbar />
         <Mainpage />
-        {/* <LatestJobs /> */}
-        {/* <ServiceDetailPage/> */}
         <Footer />
     </div>
   )

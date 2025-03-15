@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import About from "./Pages/About";
 import LatestJobs from "./Pages/LatestJobs";
 import Contactus from "./Pages/Contactus";
 import MyServices from "./Pages/MyServices";
 import ServiceDetailPage from "./Pages/ServiceDetailPage";
+import Home from "./Pages/Home";
 
 
 
