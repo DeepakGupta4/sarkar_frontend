@@ -48,4 +48,95 @@
     font-weight: bold;
     color: #2c3e50;
   }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .button:active {
+    transform: scale(0.98);
+  }
+  
+
+
+  /* Responsive Design */
+@media (max-width: 1024px) {
+  .service-detail-container {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .service-detail-container h1 {
+    font-size: 28px;
+  }
+
+  .service-detail-container p,
+  .service-detail-container ul li {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail-container {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .service-detail-container h1 {
+    font-size: 26px;
+  }
+
+  .service-detail-container h3 {
+    font-size: 20px;
+  }
+
+  .service-detail-container p,
+  .service-detail-container ul li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-detail-container {
+    max-width: 100%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .service-detail-container h1 {
+    font-size: 24px;
+  }
+
+  .service-detail-container h3 {
+    font-size: 18px;
+  }
+
+  .service-detail-container p,
+  .service-detail-container ul li {
+    font-size: 14px;
+  }
+}
+
   

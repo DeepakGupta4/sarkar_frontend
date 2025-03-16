@@ -5,7 +5,7 @@
     color: #333;
     padding: 50px 20px;
     background-color: black;
-   
+   margin-top: 60px;
   }
   
   /* Header Section */
@@ -153,3 +153,164 @@
     background: #ffaa00;
   }
   
+
+  /* Responsive Styles for About Section */
+@media screen and (max-width: 1024px) {
+  .about-container{
+    margin-top: 70px;
+  }
+  .about-header h1 {
+    font-size: 40px;
+  }
+
+  .about-header p {
+    font-size: 20px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .about-text li {
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .about-mission h2,
+  .about-cta h2 {
+    font-size: 24px;
+  }
+
+  .about-mission p,
+  .about-cta p {
+    font-size: 14px;
+  }
+
+  .about-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 30px 10px;
+  }
+
+  .about-header h1 {
+    font-size: 32px;
+  }
+
+  .about-header p {
+    font-size: 18px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-text {
+    padding: 0 15px;
+  }
+
+  .about-text h2 {
+    font-size: 22px;
+  }
+
+  .about-text p {
+    font-size: 13px;
+  }
+
+  .about-text li {
+    font-size: 13px;
+  }
+
+  .about-mission,
+  .about-cta {
+    padding: 30px 15px;
+  }
+
+  .about-mission h2,
+  .about-cta h2 {
+    font-size: 22px;
+  }
+
+  .about-mission p,
+  .about-cta p {
+    font-size: 13px;
+  }
+
+  .about-button {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 20px 5px;
+    
+  }
+
+  .about-header h1 {
+    font-size: 28px;
+  }
+
+  .about-header p {
+    font-size: 16px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-text {
+    padding: 0 10px;
+  }
+
+  .about-text h2 {
+    font-size: 20px;
+  }
+
+  .about-text p {
+    font-size: 12px;
+  }
+
+  .about-text li {
+    font-size: 12px;
+  }
+
+  .about-mission,
+  .about-cta {
+    padding: 25px 10px;
+  }
+
+  .about-mission h2,
+  .about-cta h2 {
+    font-size: 20px;
+  }
+
+  .about-mission p,
+  .about-cta p {
+    font-size: 12px;
+  }
+
+  .about-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

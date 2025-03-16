@@ -3,6 +3,7 @@
   padding: 50px 20px;
   text-align: center;
   background-color: #000;
+  margin-top: 50px;
 }
 
 /* Intro Section */
@@ -13,6 +14,7 @@
   background: rgb(38, 33, 33);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* margin-top: 30px; */
 }
 
 .job-intro h1 {
@@ -127,4 +129,122 @@
 
 .apply-button:hover {
   background: #ffaa00;
+}
+
+/* Responsive Styles for Job Section */
+@media screen and (max-width: 1024px) {
+  .job-intro {
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .job-intro h1 {
+    font-size: 24px;
+  }
+
+  .job-intro p {
+    font-size: 14px;
+  }
+
+  .job-list {
+    gap: 15px;
+  }
+
+  .job-card {
+    width: 260px;
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 20px;
+  }
+
+  .job-description {
+    font-size: 13px;
+  }
+
+  .apply-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .job-container {
+    padding: 30px 10px;
+  }
+
+  .job-intro {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .job-intro h1 {
+    font-size: 22px;
+  }
+
+  .job-intro p {
+    font-size: 13px;
+  }
+
+  .job-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 18px;
+  }
+
+  .job-description {
+    font-size: 12px;
+  }
+
+  .apply-button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .job-container {
+    padding: 20px 5px;
+  }
+
+  .job-intro {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .job-intro h1 {
+    font-size: 20px;
+  }
+
+  .job-intro p {
+    font-size: 12px;
+  }
+
+  .job-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .job-title {
+    font-size: 16px;
+  }
+
+  .job-description {
+    font-size: 11px;
+  }
+
+  .apply-button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
 }

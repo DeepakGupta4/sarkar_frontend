@@ -1,51 +1,137 @@
-.navbar{
-    height: 70px;
-    width: 100%;
-    background-color: #003366;
-    padding: 10px;
+/* Navbar */
+.navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0px 50px;
-}
-.logo{
-    font-size: 45px;
-    font-weight: 600;
+    align-items: center;
+    background: #19339a;
     color: #ffcc00;
-}
-.logo span{
-    font-size: 50px;
-    font-weight: 800;
-    color: #fff;
-}
-/* .navmiddle{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-} */
-.navmiddle ul{
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-}
- .li{
-    list-style: none;
-    font-size: 20px;
-    font-weight: 600;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: #ffcc00;
+  }
+  
+  /* Hamburger Icon */
+  .menu-toggle {
+    font-size: 26px;
     cursor: pointer;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #ffcc00;
-}
- .li:hover{
-    background-color: white;
-    color: black;
-    border-radius: 20px;
+    display: block;
+    position: relative;
+    z-index: 1100;
+  }
+  
+  /* Navigation Menu */
+  .navmiddle {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 60%;
+    background: #ebcb4f;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9999;
+    
+  }
+  
+  /* Show Menu When Active */
+  .navmiddle.active {
+    display: block;
+  }
+  
+  /* Navigation List */
+  .navmiddle ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+   
+  }
+  
+  .navmiddle ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    /* background-color: red; */
+  }
+  
+  /* Ensure full click area */
+ /* Remove text decoration for all links */
+.navmiddle ul li .nav-link {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Default text color */
+    font-size: 18px;
+    padding: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.active {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
+
+
+/* Active Link Styling */
+.navmiddle ul li .nav-link.active-link {
+    background: #ffcc00;  /* Highlight color */
+    color: #19339a;       /* Text color */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none; /* Ensures active link has no underline */
+}
+
+/* Hover Effect */
+/* .navmiddle ul li .nav-link:hover {
+    text-decoration: none; /* No underline on hover */
+ 
+  /* ✅ Fixed Hover Effect */
+  
+  
+  /* Fix for Body */
+  body {
+    position: relative;
+    overflow-x: hidden;
   }
+  
+  /* Responsive Fix */
+  @media (min-width: 950px) {
+    .menu-toggle {
+      display: none;
+    }
+  
+    .navmiddle {
+      display: flex;
+      position: static;
+      width: auto;
+      background: none;
+      box-shadow: none;
+    }
+  
+    .navmiddle ul {
+      display: flex;
+    }
+  
+    .navmiddle ul li {
+      border: none;
+      padding: 0 15px;
+    }
+  
+    .navmiddle ul li .nav-link {
+      color: white;
+    }
+  
+    .navmiddle ul li .nav-link:hover {
+      background: none;
+      color: #ffcc00;
+    }
+  }
+  
