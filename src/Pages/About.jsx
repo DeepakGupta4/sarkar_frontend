@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer';
 import './About.css';
 import { Link } from 'react-router-dom';
+import MyImage from "../assets/IMG-20250316-WA0002[1].jpg";
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
       {/* About Content Section */}
       <div className="about-content">
         <div className="about-image">
-          <img src="https://cdn.pixabay.com/photo/2020/01/30/21/24/shop-4806610_1280.jpg" alt="CSC Center" />
+          <img src={MyImage} alt="CSC Center" />
         </div>
         <div className="about-text">
           <h2>Who We Are</h2>

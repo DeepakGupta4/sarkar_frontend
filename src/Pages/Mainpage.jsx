@@ -6,6 +6,10 @@ import "swiper/css/navigation";
 import "./Mainpage.css";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import MyImage from "../assets/IMG-20250316-WA0002[1].jpg";
+import MyImage2 from "../assets/WhatsApp Image 2025-03-16 at 14.24.45_d3098968.jpg";
+import MyImage3 from "../assets/WhatsApp Image 2025-03-16 at 14.28.10_b66cc064.jpg";
+
 
 const Mainpage = () => {
   return (
@@ -19,13 +23,13 @@ const Mainpage = () => {
         className="slider"
       >
         <SwiperSlide className="img-slide">
-          <img src="https://cdn.pixabay.com/photo/2016/11/23/14/56/bazaar-1853361_1280.jpg" alt="Shop View 1" />
+          <img src={MyImage} alt="My Image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://cdn.pixabay.com/photo/2022/05/08/14/30/couple-7182248_1280.jpg" alt="Shop View 2" />
+          <img src={MyImage2} alt="Shop View 2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://cdn.pixabay.com/photo/2020/01/30/21/24/shop-4806610_1280.jpg" alt="Shop View 3" />
+          <img src={MyImage3} alt="Shop View 3" />
         </SwiperSlide>
       </Swiper>
 
