@@ -1,67 +1,49 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import "./ServiceDetail.css";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import './ServiceDetailPage.css'
 
-const serviceData = {
-  "aadhar-card": {
-    title: "Aadhar Card Services",
-    description: "Apply for a new Aadhar card, update details, and biometric verification.",
-    documents: ["Aadhar Form", "Proof of Identity", "Proof of Address"],
-    processingTime: "7-10 days",
-    fee: "₹150 - ₹200"
-  },
-  "pan-card": {
-    title: "PAN Card Services",
-    description: "New PAN card application and corrections.",
-    documents: ["Aadhar Card", "Passport-size Photo"],
-    processingTime: "2 Hour Only",
-    fee: "₹200"
-  },
-  "voter-id": {
-    title: "Voter ID Services",
-    description: "New Voter ID registration, corrections, and duplicate Voter ID issuance.",
-    documents: ["Voter ID Form", "Proof of Address"],
-    processingTime: "3 days",
-    fee: "₹150"
-  },
-  "driving-license": {
-    title: "Driving License Services",
-    description: "Apply for a new driving license, renewal, and other RTO services.",
-    documents: ["Driving License Form", "Medical Certificate"],
-    processingTime: "1 Hour",
-    fee: "₹200"
-  }
-};
+const ServiceDetail = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [service, setService] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const ServiceDetailPage = () => {
-  const { serviceId } = useParams();
-  const service = serviceData[serviceId];
+  useEffect(() => {
+    const fetchService = async () => {
+      try {
+        const response = await axios.get(`http://localhost:4000/api/services/${id}`);
+        setService(response.data);
+      } catch (error) {
+        console.error("Error fetching service:", error);
+        setError("Failed to load service details");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchService();
+  }, [id]);
+
+  if (loading) return <h2>Loading service detail...</h2>;
+  if (error) return <h2>{error}</h2>;
 
   return (
-    <div className="service-detail-container">
-      {service ? (
-        <>
-          <h1>{service.title}</h1>
-          <p>{service.description}</p>
-          <h3>Required Documents:</h3>
-          <ul>
-            {service.documents.map((doc, index) => (
-              <li key={index}>{doc}</li>
-            ))}
-          </ul>
-          <p><strong>Processing Time:</strong> {service.processingTime}</p>
-          <p><strong>Fee:</strong> {service.fee}</p>
-          <div className="button-container">
-          <Link to={'/services'} className="button">Go Back</Link>
-          <Link to={'/contact#contact-form'} className="button">Contact Us</Link>
-</div>
-        </>
-        
-      ) : (
-        <p>Service not found!</p>
-      )}
+    <div className="service-page">
+      <div className="service-detail-container">
+      <h1 className="h1">{service.name}</h1>
+      <p className="p"><strong>Price:</strong> ₹{service.price}</p>
+      <p className="p"><strong>Description:</strong> {service.description}</p>
+      <p className="p"><strong>Important Documents:</strong> {service.documents || "Not Available"}</p>
+
+      <div className="service-buttons">
+        <button className="go-back" onClick={() => navigate(-1)}>🔙 Go Back</button>
+        <button className="contact-us" onClick={() => alert("Contact Us: +91 7565968670")}>📞 Contact Us</button>
+      </div>
+    </div>
     </div>
   );
 };
 
-export default ServiceDetailPage;
+export default ServiceDetail;

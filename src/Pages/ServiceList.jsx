@@ -1,21 +1,30 @@
-import React from "react";
-// import "./ServiceList.css";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const services = [
-  { id: "aadhar-card", title: "Aadhar Card Services", description: "Apply, update, and verify Aadhar." },
-  { id: "pan-card", title: "PAN Card Services", description: "New PAN applications and corrections." },
-  { id: "ration-card", title: "Ration Card Services", description: "Apply for a new ration card or update details." }
-];
+import axios from "axios";
 
 const ServiceList = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/services");
+        setServices(response.data);
+      } catch (error) {
+        console.error("Failed to fetch services", error);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
   return (
     <div className="service-container">
       <h1>Our Services</h1>
       <div className="service-grid">
         {services.map((service) => (
-          <Link to={`/services/${service.id}`} key={service.id} className="service-box">
-            <h2>{service.title}</h2>
+          <Link to={`/service/${service._id}`} key={service._id} className="service-box">
+            <h2>{service.name}</h2>
             <p>{service.description}</p>
           </Link>
         ))}

@@ -1,80 +1,87 @@
-/* MyServices.css */
-
+/* ✅ General Styling */
 .services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .services-title {
-    font-size: 50px;
-    font-weight: bold;
-    color: #ffcc00;
-    margin-bottom: 10px;
-  }
-  
-  .services-description {
-    font-size: 25px;
-    color: #ffcc00;
-    margin-bottom: 30px;
-  }
-  
-  .services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .service-link {
-    text-decoration: none;
-  }
-  
-  .service-card {
-    background: #5c5858;
-    border-radius: 17px;
-    padding: 20px;
-    text-align: center;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 230px;
-  }
-  
-  .service-card:hover {
-    background: #ffcc00;
-    /* color: #fff; */
-    transform: translateY(-5px);
-  }
-  
-  .service-icon {
-    font-size: 60px;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .service-title {
-    font-size: 25px;
-    font-weight: bold;
-    color: #fff;
-  }
-  /* .service.service-card{
-    color: #000;
-  }
-   */
-  .service-description {
-    font-size: 19px;
-    color: #fff;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 50px;
+}
 
-  /* Responsive Styles for MyServices.css */
+.services-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.services-description {
+  font-size: 24px;
+  color: #ffcc00;
+  margin-bottom: 30px;
+}
+
+/* ✅ Grid Layout */
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* ✅ Service Card */
+.service-card {
+  background: #333;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  min-height: 250px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ Hover Effect */
+.service-card:hover {
+  background: #ffcc00;
+  color: #333;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.service-link{
+  text-decoration: none;
+}
+
+/* ✅ Service Icon */
+.service-icon {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ✅ Text Styles */
+.service-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.service-description {
+  font-size: 18px;
+  color: inherit;
+}
+
+/* ✅ Responsive Styles */
 @media screen and (max-width: 1024px) {
-  .services-container{
-    margin-top: 50px;
-  }
   .services-title {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .services-description {
@@ -82,11 +89,43 @@
   }
 
   .services-list {
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 18px;
+    min-height: 220px;
+  }
+
+  .service-icon {
+    font-size: 55px;
+  }
+
+  .service-title {
+    font-size: 24px;
+  }
+
+  .service-description {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-title {
+    font-size: 38px;
+  }
+
+  .services-description {
+    font-size: 20px;
+  }
+
+  .services-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
   }
 
   .service-card {
-    padding: 15px;
+    padding: 16px;
     min-height: 200px;
   }
 
@@ -99,26 +138,26 @@
   }
 
   .service-description {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .services-title {
-    font-size: 35px;
+    font-size: 34px;
   }
 
   .services-description {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .services-list {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 12px;
   }
 
   .service-card {
-    padding: 12px;
+    padding: 14px;
     min-height: 180px;
   }
 
@@ -131,38 +170,6 @@
   }
 
   .service-description {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .services-title {
-    font-size: 30px;
-  }
-
-  .services-description {
-    font-size: 18px;
-  }
-
-  .services-list {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 8px;
-  }
-
-  .service-card {
-    padding: 10px;
-    min-height: 160px;
-  }
-
-  .service-icon {
-    font-size: 40px;
-  }
-
-  .service-title {
-    font-size: 18px;
-  }
-
-  .service-description {
-    font-size: 14px;
+    font-size: 15px;
   }
 }

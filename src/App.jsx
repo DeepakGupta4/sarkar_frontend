@@ -20,7 +20,8 @@ function App() {
         <Route path="/latestjobs" element={<LatestJobs />} />
         <Route path="/contact" element={<Contactus />} />
         <Route path="/services" element={<MyServices />} />
-        <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+        <Route path="/service/:id" element={<ServiceDetailPage />} />
+      
       </Routes>
     </Router>
     </>

@@ -56,10 +56,11 @@ const Mainpage = () => {
       <div className="featured-services">
   <h2>Our Key Services</h2>
   <div className="service-grid">
-    <a href="/services/aadhar-card" className="service-box">Aadhar Card Services</a>
-    <a href="/services/pan-card" className="service-box">PAN Card Services</a>
-    <a href="/services/voter-id" className="service-box">Voter ID Services</a>
-    <a href="/services/driving-license" className="service-box">Driving License</a>
+  <Link to="/services/aadhar-card" className="service-box">Aadhar Card Services</Link>
+<Link to="/services/pan-card" className="service-box">PAN Card Services</Link>
+<Link to="/services/voter-id" className="service-box">Voter ID Services</Link>
+<Link to="/services/driving-license" className="service-box">Driving License</Link>
+
   </div>
 </div>
 

@@ -1,96 +1,71 @@
-import React from "react";
-import "./LatestJobs.css"; // Ensure this file exists
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-
-const jobs = [
-  {
-    title: "Junior Engineer",
-    department: "Public Works Department (PWD)",
-    deadline: "March 25, 2025",
-    description: "Government job for diploma holders in civil engineering.",
-    documents: ["Aadhar Card", "Educational Certificates", "Passport Size Photo"],
-    link: "#"
-  },
-  {
-    title: "Clerk",
-    department: "State Revenue Department",
-    deadline: "April 10, 2025",
-    description: "Entry-level clerical government job with good salary package.",
-    documents: ["PAN Card", "10th Marksheet", "Domicile Certificate"],
-    link: "#"
-  },
-  {
-    title: "Data Entry Operator",
-    department: "E-Governance Department",
-    deadline: "April 5, 2025",
-    description: "Required computer knowledge and good typing speed.",
-    documents: ["Aadhar Card", "Computer Certificate", "Passport Size Photo"],
-    link: "#"
-  },
-  {
-    title: "Data Entry Operator",
-    department: "E-Governance Department",
-    deadline: "April 5, 2025",
-    description: "Required computer knowledge and good typing speed.",
-    documents: ["Aadhar Card", "Computer Certificate", "Passport Size Photo"],
-    link: "#"
-  },
-  {
-    title: "Data Entry Operator",
-    department: "E-Governance Department",
-    deadline: "April 5, 2025",
-    description: "Required computer knowledge and good typing speed.",
-    documents: ["Aadhar Card", "Computer Certificate", "Passport Size Photo"],
-    link: "#"
-  }
-];
-
-const JobCard = ({ job }) => {
-  return (
-    <div className="job-card">
-      <h2 className="job-title">{job.title}</h2>
-      <p className="job-department">{job.department}</p>
-      <p className="job-deadline">Deadline: <span>{job.deadline}</span></p>
-      <p className="job-description">{job.description}</p>
-      <div className="job-documents">
-        <h3>Important Documents:</h3>
-        <ul>
-          {job.documents.map((doc, index) => (
-            <li key={index}>{doc}</li>
-          ))}
-        </ul>
-      </div>
-      <a href={job.link} target="_blank" rel="noopener noreferrer">
-        <button className="apply-button">Apply Now</button>
-      </a>
-    </div>
-  );
-};
+import './LatestJobs.css';
 
 const LatestJobs = () => {
+  const [jobs, setJobs] = useState([]);
+
+  const fetchJobs = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/api/jobs"); // Make sure backend includes `applicationLink`
+      setJobs(response.data);
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchJobs(); // Load jobs initially
+    const interval = setInterval(fetchJobs, 5000); // ✅ Auto-refresh every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
   return (
     <>
       <Navbar />
-    <div className="job-container">
-      {/* Intro Section */}
-      <div className="job-intro">
-        <h1 className="job-section-title">Find the Latest Government Jobs</h1>
-        <p>
-          Welcome to the **Sarkar CSC Center Job Portal**! We provide the latest 
-          government job updates, exam notifications, and application details. 
-          Stay informed and apply for **your dream job today**!
-        </p>
-      </div>
+      <div className="job-container">
+        <h1>Latest Government Jobs</h1>
+        <div className="job-list">
+          {jobs.length === 0 ? (
+            <p>No jobs available</p>
+          ) : (
+            jobs.map((job) => (
+              <div key={job._id} className="job-card">
+                <h2>{job.jobTitle}</h2>
+                <p><strong>Company:</strong> {job.company}</p>
+                <p><strong>Location:</strong> {job.location}</p>
+                <p><strong>Salary:</strong> ₹{job.salary}</p>
+                <p>{job.description}</p>
+                <p><strong>Documents Required:</strong> {job.documents}</p>
+                <p><strong>Service Price:</strong> ₹{job.price}</p>
 
-      {/* Job Listings */}
-      <div className="job-list">
-        {jobs.map((job, index) => (
-          <JobCard key={index} job={job} />
-        ))}
+                {/* Apply Now Button */}
+                <button 
+  className="apply-button"
+  onClick={() => {
+    if (job.applicationLink) {
+      const fixedLink = job.applicationLink.startsWith("http") 
+        ? job.applicationLink 
+        : `https://${job.applicationLink}`; // ✅ Ensure full URL
+
+      window.open(fixedLink, "_blank"); // ✅ Open in new tab
+    } else {
+      alert("Application link not available!");
+    }
+  }}
+>
+  Apply Now
+</button>
+
+              </div>
+            ))
+          )}
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
