@@ -56,18 +56,19 @@ const Mainpage = () => {
       <div className="featured-services">
   <h2>Our Key Services</h2>
   <div className="service-grid">
-  <Link to="http://localhost:5174/service/67dbb16157a52e6a88b55e98" className="service-box">
+  <Link to="/service/67dbb16157a52e6a88b55e98" className="service-box">
   Aadhar Card Services
 </Link>
-<Link to="http://localhost:5174/service/67dbb16157a52e6a88b55e99" className="service-box">
+<Link to="/service/67dbb16157a52e6a88b55e99" className="service-box">
   PAN Card Services
 </Link>
-<Link to="http://localhost:5174/service/67dbb16157a52e6a88b55e9a" className="service-box">
+<Link to="/service/67dbb16157a52e6a88b55e9a" className="service-box">
   Voter ID Services
 </Link>
-<Link to="http://localhost:5174/service/67dbb16157a52e6a88b55e9b" className="service-box">
+<Link to="/service/67dbb16157a52e6a88b55e9b" className="service-box">
   Driving License
 </Link>
+
 
   </div>
 </div>
