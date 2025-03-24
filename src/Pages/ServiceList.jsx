@@ -8,7 +8,7 @@ const ServiceList = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/services");
+        const response = await axios.get("https://sarkar-backend-cks3.onrender.com/api/services");
         setServices(response.data);
       } catch (error) {
         console.error("Failed to fetch services", error);

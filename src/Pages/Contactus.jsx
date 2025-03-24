@@ -31,7 +31,7 @@ const Connect = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/api/contact/send-email", formData);
+      const response = await axios.post("https://sarkar-backend-cks3.onrender.com/api/contact/send-email", formData);
 
       if (response.data.success) {
         setStatus({ message: "Email sent successfully!", type: "success" });

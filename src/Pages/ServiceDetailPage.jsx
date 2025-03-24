@@ -13,7 +13,7 @@ const ServiceDetail = () => {
   useEffect(() => {
     const fetchService = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/services/${id}`);
+        const response = await axios.get(`https://sarkar-backend-cks3.onrender.com/api/services/${id}`);
         setService(response.data);
       } catch (error) {
         console.error("Error fetching service:", error);

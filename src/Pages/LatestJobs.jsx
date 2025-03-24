@@ -9,7 +9,7 @@ const LatestJobs = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/jobs"); // Make sure backend includes `applicationLink`
+      const response = await axios.get("https://sarkar-backend-cks3.onrender.com/api/jobs"); // Make sure backend includes `applicationLink`
       setJobs(response.data);
     } catch (error) {
       console.error("Error fetching jobs:", error);

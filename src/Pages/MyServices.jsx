@@ -11,7 +11,7 @@ const MyServices = () => {
   // 🔹 Fetch Services from Backend
   const fetchServices = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/services");
+      const response = await axios.get("https://sarkar-backend-cks3.onrender.com/api/services");
       setServices(response.data);
     } catch (error) {
       console.error("Error fetching services:", error);
