@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // ✅ Import Link for navigation
-import "./MyServices.css";
+import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Loader from "../Components/Loader"; // ✅ Import Loader
+import "./MyServices.css";
 
 const MyServices = () => {
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ Add loading state
 
   // 🔹 Fetch Services from Backend
   const fetchServices = async () => {
@@ -15,11 +17,13 @@ const MyServices = () => {
       setServices(response.data);
     } catch (error) {
       console.error("Error fetching services:", error);
+    } finally {
+      setLoading(false); // ✅ Stop loading after fetching data
     }
   };
 
   useEffect(() => {
-    fetchServices(); // ✅ Fetch services when the page loads
+    fetchServices();
   }, []);
 
   return (
@@ -31,18 +35,23 @@ const MyServices = () => {
           We provide a wide range of <strong>government and digital services</strong> to make your life easier.
         </p>
 
-        <div className="services-list">
-          {services.map((service) => (
-            <Link to={`/service/${service._id}`} key={service._id} className="service-link">
-              <div className="service-card">
-                <span className="service-icon">{service.icon}</span>
-                <h3 className="service-title">{service.name}</h3>
-                <p className="service-description">{service.description}</p>
-                <p className="service-price"><strong>₹{service.price}</strong></p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* ✅ Show Loader while fetching services */}
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="services-list">
+            {services.map((service) => (
+              <Link to={`/service/${service._id}`} key={service._id} className="service-link">
+                <div className="service-card">
+                  <span className="service-icon">{service.icon}</span>
+                  <h3 className="service-title">{service.name}</h3>
+                  <p className="service-description">{service.description}</p>
+                  <p className="service-price"><strong>₹{service.price}</strong></p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
       <Footer />
     </>

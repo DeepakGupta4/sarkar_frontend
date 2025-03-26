@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loader from "../Components/Loader"; // ✅ Importing Loader at the top
 import "./ServiceDetailPage.css";
 
 const ServiceDetail = () => {
@@ -35,7 +36,8 @@ const ServiceDetail = () => {
     fetchService();
   }, [id]);
 
-  if (loading) return <h2>⏳ Loading service details...</h2>;
+  // ✅ Show Loader while fetching data
+  if (loading) return <Loader />;
   if (error) return <h2>{error}</h2>;
 
   return (
@@ -57,12 +59,11 @@ const ServiceDetail = () => {
           <button className="go-back" onClick={() => navigate(-1)}>
             🔙 Go Back
           </button>
-          <button
-            className="contact-us"
-            onClick={() => alert("📞 Contact Us: +91 7565968670")}
-          >
-            📞 Contact Us
-          </button>
+          <a href="tel:+917565968670" className="contact-link">
+  <button className="contact-us">📞 Contact Us: +91 7565 9686 70</button>
+</a>
+
+
         </div>
       </div>
     </div>

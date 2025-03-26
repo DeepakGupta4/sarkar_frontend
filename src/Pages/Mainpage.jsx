@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Mainpage.css";
@@ -11,18 +11,22 @@ import Footer from "../Components/Footer";
 import MyImage from "../assets/IMG-20250316-WA0002[1].jpg";
 import MyImage2 from "../assets/WhatsApp Image 2025-03-16 at 14.24.45_d3098968.jpg";
 import MyImage3 from "../assets/WhatsApp Image 2025-03-16 at 14.28.10_b66cc064.jpg";
+import axios from "axios";
 
 const Mainpage = () => {
-  
-  const [services, setServices] = useState([]);
+  const navigate = useNavigate();
+  const [services, setServices] = useState([]); // 🟢 Initialize with empty array
+  const [loading, setLoading] = useState(true); // 🟢 Add loading state
+  const [error, setError] = useState(null); // 🟢 Add error handling
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
         const res = await axios.get("https://sarkar-backend-cks3.onrender.com/api/services");
+        console.log("Fetched Services in Mainpage:", res.data); // ✅ Check in Console
         setServices(res.data);
       } catch (error) {
-        console.error("Error fetching services:", error);
+        console.error("Error fetching services in Mainpage:", error);
       }
     };
 
@@ -59,37 +63,45 @@ const Mainpage = () => {
 
       {/* Featured Services */}
       <section className="featured-services">
-        <h2>Our Key Services</h2>
-        <div className="service-grid">
-          {services.length > 0 ? (
-            services.map((service) => (
-              <Link key={service._id} to={`/service/${service._id}`} className="service-box">
-                {service.name}
-              </Link>
-            ))
-          ) : (
-            <p>Loading services...</p>
-          )}
-        </div>
-      </section>
+      <h2>Our Key Services</h2>
+      <div className="service-grid">
+        {loading ? (
+          <p>Loading services...</p>
+        ) : error ? (
+          <p className="error-message">{error}</p>
+        ) : services.length > 0 ? (
+          services.map((service) => (
+            <Link key={service._id} to={`/service/${service._id}`} className="service-box">
+              {service.name}
+            </Link>
+          ))
+        ) : (
+          <p>No services available</p>
+        )}
+      </div>
+    </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div className="testimonial-grid">
-          {[
-            { name: "Deepak Gupta", text: "Excellent service! Very professional and quick response.", img: "https://randomuser.me/api/portraits/men/1.jpg" },
-            { name: "Arijeet Sharma", text: "Sarkar CSC Center helped me get my Aadhar updated in no time!", img: "https://randomuser.me/api/portraits/women/2.jpg" },
-            { name: "Sagar Yadav", text: "Friendly staff and smooth process. Highly recommended!", img: "https://randomuser.me/api/portraits/men/3.jpg" }
-          ].map((testimonial, index) => (
-            <div key={index} className="testimonial-box">
-              <img src={testimonial.img} alt={testimonial.name} className="testimonial-img" />
-              <p>"{testimonial.text}"</p>
-              <h4>{testimonial.name}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
+      <section className="featured-services">
+      <h2>Our Key Services</h2>
+      <div className="service-grid">
+        {[
+          { id: "67dbb16157a52e6a88b55e98", name: "Aadhar Card Services" },
+          { id: "67dbb16157a52e6a88b55e99", name: "PAN Card Services" },
+          { id: "67dbb16157a52e6a88b55e9a", name: "Voter ID Services" },
+          { id: "67dbb16157a52e6a88b55e9b", name: "Driving License" }
+        ].map((service) => (
+          <div
+            key={service.id}
+            className="service-box"
+            onClick={() => navigate(`/service/${service.id}`)} // ✅ navigate instead of <Link>
+            style={{ cursor: "pointer" }} // ✅ Show clickable cursor
+          >
+            {service.name}
+          </div>
+        ))}
+      </div>
+    </section>
 
       {/* Why Choose Us Section */}
       <section className="why-choose-us">
