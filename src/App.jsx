@@ -12,11 +12,9 @@ import Loader from "./Components/Loader";
 
 function App() {
 
-   const [loading, setLoading] = useState(true);
   return (
     <>
     <Router>
-    {loading && <Loader />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
