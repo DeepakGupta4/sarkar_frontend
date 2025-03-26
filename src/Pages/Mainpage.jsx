@@ -84,22 +84,15 @@ const Mainpage = () => {
       {/* Testimonials Section */}
       <section className="featured-services">
       <h2>Our Key Services</h2>
-      <div className="service-grid">
-        {[
-          { id: "67dbb16157a52e6a88b55e98", name: "Aadhar Card Services" },
-          { id: "67dbb16157a52e6a88b55e99", name: "PAN Card Services" },
-          { id: "67dbb16157a52e6a88b55e9a", name: "Voter ID Services" },
-          { id: "67dbb16157a52e6a88b55e9b", name: "Driving License" }
-        ].map((service) => (
-          <div
-            key={service.id}
-            className="service-box"
-            onClick={() => navigate(`/service/${service.id}`)} // ✅ navigate instead of <Link>
-            style={{ cursor: "pointer" }} // ✅ Show clickable cursor
-          >
-            {service.name}
-          </div>
-        ))}
+      <div 
+        className="service-grid" 
+        onClick={() => navigate("/services")} // ✅ Navigate to /services
+        style={{ cursor: "pointer" }} // ✅ Clickable cursor
+      >
+        <div className="service-box">Aadhar Card Services</div>
+        <div className="service-box">PAN Card Services</div>
+        <div className="service-box">Voter ID Services</div>
+        <div className="service-box">Driving License</div>
       </div>
     </section>
 

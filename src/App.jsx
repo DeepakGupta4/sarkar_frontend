@@ -7,7 +7,6 @@ import Contactus from "./Pages/Contactus";
 import MyServices from "./Pages/MyServices";
 import ServiceDetailPage from "./Pages/ServiceDetailPage";
 import Home from "./Pages/Home";
-import Loader from "./Components/Loader";
 
 
 function App() {
