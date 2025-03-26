@@ -6,18 +6,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./Mainpage.css";
 import Footer from "../Components/Footer";
-
 // Import Images
 import MyImage from "../assets/IMG-20250316-WA0002[1].jpg";
 import MyImage2 from "../assets/WhatsApp Image 2025-03-16 at 14.24.45_d3098968.jpg";
 import MyImage3 from "../assets/WhatsApp Image 2025-03-16 at 14.28.10_b66cc064.jpg";
 import axios from "axios";
+import cust1 from "../assets/cust1.jpg";
+import cust2 from "../assets/cust2.jpg";
+import cust3 from "../assets/cust3.jpg";
+
+const testimonials = [
+  { name: "Deepak Gupta", text: "Reliable and affordable CSC services. The team was professional and ensured a smooth experience!", image: cust1 },
+  { name: "Raunak Singh", text: "A one-stop solution for all government document needs. Trustworthy and fast service!", image: cust2 },
+  { name: "Bablu Rao", text: "I was struggling with my driving license application, but they made it so simple! Great work!", image: cust3 },
+];
 
 const Mainpage = () => {
   const navigate = useNavigate();
-  const [services, setServices] = useState([]); // 🟢 Initialize with empty array
-  const [loading, setLoading] = useState(true); // 🟢 Add loading state
-  const [error, setError] = useState(null); // 🟢 Add error handling
+  const [services, setServices] = useState([]);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -64,26 +70,6 @@ const Mainpage = () => {
       {/* Featured Services */}
       <section className="featured-services">
       <h2>Our Key Services</h2>
-      <div className="service-grid">
-        {loading ? (
-          <p>Loading services...</p>
-        ) : error ? (
-          <p className="error-message">{error}</p>
-        ) : services.length > 0 ? (
-          services.map((service) => (
-            <Link key={service._id} to={`/service/${service._id}`} className="service-box">
-              {service.name}
-            </Link>
-          ))
-        ) : (
-          <p>No services available</p>
-        )}
-      </div>
-    </section>
-
-      {/* Testimonials Section */}
-      <section className="featured-services">
-      <h2>Our Key Services</h2>
       <div 
         className="service-grid" 
         onClick={() => navigate("/services")} // ✅ Navigate to /services
@@ -95,6 +81,22 @@ const Mainpage = () => {
         <div className="service-box">Driving License</div>
       </div>
     </section>
+
+      {/* ✅ Testimonials Section with Photos */}
+      
+    <section className="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div className="testimonial-grid">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="testimonial-card">
+            <img src={testimonial.image} alt={testimonial.name} className="testimonial-photo" />
+            <p>"{testimonial.text}"</p>
+            <h4>— {testimonial.name}</h4>
+          </div>
+        ))}
+      </div>
+    </section>
+  
 
       {/* Why Choose Us Section */}
       <section className="why-choose-us">
