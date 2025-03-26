@@ -9,7 +9,6 @@ import ServiceDetailPage from "./Pages/ServiceDetailPage";
 import Home from "./Pages/Home";
 
 
-
 function App() {
   return (
     <>
@@ -21,7 +20,7 @@ function App() {
         <Route path="/contact" element={<Contactus />} />
         <Route path="/services" element={<MyServices />} />
         <Route path="/service/:id" element={<ServiceDetailPage />} />
-      
+        {/* <Analytics /> */}
       </Routes>
     </Router>
     </>

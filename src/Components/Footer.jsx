@@ -24,7 +24,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>Email: sarkarcscpatherwa@gmail.com</p>
           <p>Phone: +91 7565968670</p>
-          <p>Address: Near NIC Patherwa, Patherwa, India</p>
+          <p>Address: Near NIC Patherwa, Kushinagar, India</p>
         </div>
       </div>
       <div className="footer-bottom">
