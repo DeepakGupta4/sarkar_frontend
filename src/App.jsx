@@ -7,6 +7,7 @@ import Contactus from "./Pages/Contactus";
 import MyServices from "./Pages/MyServices";
 import ServiceDetailPage from "./Pages/ServiceDetailPage";
 import Home from "./Pages/Home";
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/service/:id" element={<ServiceDetailPage />} />
       </Routes>
     </Router>
+    <Analytics />
     </>
     
   );
