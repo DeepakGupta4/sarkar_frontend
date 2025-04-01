@@ -448,15 +448,3 @@ box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
     padding: 6px 15px;
   }
 }
-
-.ad-container {
-  width: 728px;
-  height: 90px;
-  margin: 20px auto; /* Centering the Ad */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f4f4f4; /* Light Grey Background */
-  border: 1px solid #ccc; /* Light Border to Ensure Visibility */
-}
-

@@ -73,6 +73,10 @@
   margin-bottom: 8px;
 }
 
+.service-price{
+  color: #fff;
+}
+
 .service-description {
   font-size: 18px;
   color: inherit;
