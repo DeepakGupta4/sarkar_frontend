@@ -123,9 +123,6 @@ const Mainpage = () => {
         <p>Experience hassle-free digital services with Sarkar CSC Center.</p>
         <Link to="/contact" className="cta-button">Contact Us</Link>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
